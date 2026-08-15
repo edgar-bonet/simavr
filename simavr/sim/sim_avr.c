@@ -310,7 +310,7 @@ _avr_io_console_write(
 			avr->io_console_buffer.buf,
 			avr->io_console_buffer.size);
 	}
-	if (v >= ' ')
+	if (v >= ' ' && v != 0x7f)
 		avr->io_console_buffer.buf[avr->io_console_buffer.len++] = v;
 }
 

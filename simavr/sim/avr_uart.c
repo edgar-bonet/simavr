@@ -276,7 +276,7 @@ avr_uart_udr_write(
 						simavr_font.normal);
 				p->stdio_len = 0;
 			} else {
-				p->stdio_out[p->stdio_len++] = v < ' ' ? '.' : v;
+				p->stdio_out[p->stdio_len++] = (v < ' ' || v == 0x7f) ? '.' : v;
 			}
 		}
 	}
